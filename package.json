@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "simple os info demo module",
   "main": "stackos.js",
-  "repository": "https://github.com/acomito/-acomito-stackos",
+  "repository": "https://github.com/acomito/-acomito-stackos.git",
+  "bugs": "https://github.com/acomito/-acomito-stackos/issues",
   "author": "Anthony Comito",
   "license": "MIT",
+  "keywords": [
+    "os",
+    "demo",
+    "yarn course"
+  ],
   "dependencies": {
     "chalk": "^2.4.1"
   }
