@@ -1,26 +1,27 @@
-
 /**
  * Modules
  */
-const os = require('os')
-const chalk = require('chalk')
+const os = require('os');
+const chalk = require('chalk');
 
 /**
  * Identify OS nice name
  */
-let osType = 'Unknown'
+let osType = 'Unknown';
 switch (os.type()) {
-  case 'Darwin': osType = 'MacOS'
-  break;
-  case 'Linux': osType = 'Linux'
-  break;
-  case 'Windows_NT': osType = 'Windows'
-  break;
+  case 'Darwin':
+    osType = 'MacOS';
+    break;
+  case 'Linux':
+    osType = 'Linux';
+    break;
+  case 'Windows_NT':
+    osType = 'Windows';
+    break;
 }
 
 // Module Exports
 module.exports = {
-
   /**
    * Machine info
    */
@@ -45,26 +46,28 @@ module.exports = {
    * Log a fancy summary of the machine
    */
   log: function() {
-
     // Get cores nicename
-    let cores = this.info.cpus.cores
+    let cores = this.info.cpus.cores;
     switch (cores) {
-      case 2: cores = 'Dual'
+      case 2:
+        cores = 'Dual';
         break;
-      case 4: cores = 'Quad'
+      case 4:
+        cores = 'Quad';
         break;
-      case 8: cores = 'Octa'
+      case 8:
+        cores = 'Octa';
         break;
     }
 
     // Chalk strings
     const out = {
-      os: chalk.green( this.info.os ),
-      arch: chalk.grey( this.info.arch ),
+      os: chalk.cyan(this.info.os),
+      arch: chalk.grey(this.info.arch),
       cores: `${cores} Core`,
       cpu: chalk.grey(this.info.cpus.model),
-      ram: Math.floor( this.info.memory.total /1000000000 ) + 'GB RAM'
-    }
+      ram: Math.floor(this.info.memory.total / 1000000000) + 'GB RAM'
+    };
 
     // Log
     console.log(
@@ -76,6 +79,6 @@ module.exports = {
       out.cpu,
       os.EOL,
       out.ram
-    )
+    );
   }
-}
+};
